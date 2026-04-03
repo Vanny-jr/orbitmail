@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 The Problem
+## The Problem
 
 During NASA's Artemis II mission, astronauts aboard the Orion spacecraft experienced email failures with Microsoft Outlook. The root cause: Outlook assumes a stable, low-latency internet connection — something that does not exist 384,400 km from Earth, where signal latency exceeds 1,340ms and connection windows are limited.
 
@@ -12,7 +12,7 @@ During NASA's Artemis II mission, astronauts aboard the Orion spacecraft experie
 
 ---
 
-## 💡 The Solution
+## The Solution
 
 OrbitMail uses a **Store-and-Forward (Delay-Tolerant Networking)** architecture:
 
@@ -23,7 +23,7 @@ OrbitMail uses a **Store-and-Forward (Delay-Tolerant Networking)** architecture:
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---|---|
@@ -37,7 +37,7 @@ OrbitMail uses a **Store-and-Forward (Delay-Tolerant Networking)** architecture:
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -69,7 +69,7 @@ OrbitMail uses a **Store-and-Forward (Delay-Tolerant Networking)** architecture:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -82,7 +82,7 @@ OrbitMail uses a **Store-and-Forward (Delay-Tolerant Networking)** architecture:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 orbit-mail/
@@ -105,7 +105,7 @@ orbit-mail/
 
 ---
 
-## ⚡ Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js v18+
@@ -181,7 +181,6 @@ Backend  → http://localhost:5000
 5. Sync Log records the transmission event
 ```
 
----
 
 ## 🌍 Real-World Context
 
@@ -193,23 +192,10 @@ OrionOS planned modules:
 - `scheduler-service` → Mission Daily Dashboard
 - `ar-service` → AR maintenance guides
 
----
+
 
 ## 👨‍💻 Author
 
-**Evans Mutua Mulwa (Vanny jr)**
+**Evans Mutua Mulwa**
 First-Year Software Engineering Student
 Murang'a University of Technology, Kenya
-
-- GitHub: [@Vanny-jr](https://github.com/Vanny-jr)
-- Built as part of: SCS 104 — Software Requirements Engineering
-
----
-
-## 📄 License
-
-MIT License — feel free to use, modify, and distribute.
-
----
-
-> *"Houston, we don't have a problem anymore."* 🛸
