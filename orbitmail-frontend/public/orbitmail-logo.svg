@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#050A14;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="planetGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" style="stop-color:#1E3A5F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#050A14;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="envelopeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1D4ED8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="200" fill="url(#bgGrad)" />
+
+  <!-- Stars -->
+  <circle cx="60" cy="55" r="1.5" fill="white" opacity="0.8"/>
+  <circle cx="340" cy="70" r="1" fill="white" opacity="0.6"/>
+  <circle cx="85" cy="320" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="355" cy="300" r="1" fill="white" opacity="0.5"/>
+  <circle cx="130" cy="45" r="1" fill="white" opacity="0.9"/>
+  <circle cx="290" cy="360" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="45" cy="180" r="1" fill="white" opacity="0.7"/>
+  <circle cx="370" cy="160" r="1" fill="white" opacity="0.8"/>
+  <circle cx="310" cy="50" r="1" fill="white" opacity="0.5"/>
+  <circle cx="75" cy="260" r="1" fill="white" opacity="0.6"/>
+  <circle cx="160" cy="30" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="350" cy="230" r="1" fill="white" opacity="0.9"/>
+
+  <!-- Outer glow ring -->
+  <circle cx="200" cy="200" r="130" fill="url(#glowGrad)" />
+
+  <!-- Orbit ring (ellipse tilted) -->
+  <ellipse cx="200" cy="200" rx="155" ry="55"
+    fill="none"
+    stroke="url(#orbitGrad)"
+    stroke-width="2"
+    opacity="0.7"
+    filter="url(#glow)"
+    transform="rotate(-20, 200, 200)"
+  />
+
+  <!-- Orbit ring second pass (dashed) -->
+  <ellipse cx="200" cy="200" rx="155" ry="55"
+    fill="none"
+    stroke="#3B82F6"
+    stroke-width="1"
+    stroke-dasharray="8 12"
+    opacity="0.3"
+    transform="rotate(-20, 200, 200)"
+  />
+
+  <!-- Planet -->
+  <circle cx="200" cy="200" r="72" fill="url(#planetGrad)" filter="url(#softGlow)"/>
+  <circle cx="200" cy="200" r="72" fill="none" stroke="#1E3A5F" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Planet surface detail lines -->
+  <ellipse cx="200" cy="185" rx="55" ry="12" fill="none" stroke="#1E5A8F" stroke-width="1" opacity="0.4"/>
+  <ellipse cx="200" cy="210" rx="45" ry="9" fill="none" stroke="#1E5A8F" stroke-width="1" opacity="0.3"/>
+
+  <!-- Envelope body -->
+  <rect x="158" y="178" width="84" height="56" rx="5" ry="5"
+    fill="url(#envelopeGrad)"
+    filter="url(#glow)"
+  />
+
+  <!-- Envelope flap (V shape) -->
+  <polyline
+    points="158,178 200,210 242,178"
+    fill="none"
+    stroke="#60A5FA"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+  />
+
+  <!-- Envelope bottom lines -->
+  <line x1="158" y1="234" x2="242" y2="234" stroke="#1D4ED8" stroke-width="1" opacity="0.5"/>
+
+  <!-- Signal waves (right side of envelope) -->
+  <path d="M252,196 Q260,196 260,204 Q260,212 252,212"
+    fill="none" stroke="#10B981" stroke-width="2.5"
+    stroke-linecap="round" filter="url(#glow)" opacity="0.9"/>
+  <path d="M256,190 Q270,190 270,204 Q270,218 256,218"
+    fill="none" stroke="#10B981" stroke-width="2"
+    stroke-linecap="round" filter="url(#glow)" opacity="0.6"/>
+  <path d="M260,184 Q280,184 280,204 Q280,224 260,224"
+    fill="none" stroke="#10B981" stroke-width="1.5"
+    stroke-linecap="round" filter="url(#glow)" opacity="0.35"/>
+
+  <!-- Satellite dot on orbit -->
+  <circle cx="338" cy="175" r="7" fill="#3B82F6" filter="url(#glow)"/>
+  <circle cx="338" cy="175" r="4" fill="#E0F0FF"/>
+  <!-- Satellite panels -->
+  <rect x="323" y="173" width="10" height="4" rx="1" fill="#3B82F6" opacity="0.8"/>
+  <rect x="345" y="173" width="10" height="4" rx="1" fill="#3B82F6" opacity="0.8"/>
+
+  <!-- Text: ORBITMAIL -->
+  <text
+    x="200" y="308"
+    font-family="'Courier New', monospace"
+    font-size="26"
+    font-weight="bold"
+    fill="#E0F0FF"
+    text-anchor="middle"
+    letter-spacing="6"
+    filter="url(#glow)"
+  >ORBITMAIL</text>
+
+  <!-- Tagline -->
+  <text
+    x="200" y="330"
+    font-family="'Courier New', monospace"
+    font-size="9"
+    fill="#4A7FA5"
+    text-anchor="middle"
+    letter-spacing="3"
+  >ARTEMIS II // COMMS SYSTEM</text>
+
+  <!-- Bottom border line -->
+  <line x1="120" y1="340" x2="280" y2="340" stroke="#1E3A5F" stroke-width="1" opacity="0.6"/>
+
+  <!-- Corner decorations -->
+  <polyline points="20,20 20,40 40,40" fill="none" stroke="#1E3A5F" stroke-width="2"/>
+  <polyline points="380,20 380,40 360,40" fill="none" stroke="#1E3A5F" stroke-width="2"/>
+  <polyline points="20,380 20,360 40,360" fill="none" stroke="#1E3A5F" stroke-width="2"/>
+  <polyline points="380,380 380,360 360,360" fill="none" stroke="#1E3A5F" stroke-width="2"/>
+</svg>

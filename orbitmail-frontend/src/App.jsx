@@ -162,6 +162,7 @@ export default function App() {
           }}>
             {syncing ? '⚡ SYNCING...' : `NEXT SYNC: ${syncCountdown}s`}
           </div>
+          <img src="/orbitmail-logo.svg" width="36" height="36" />
         </div>
       </header>
 
